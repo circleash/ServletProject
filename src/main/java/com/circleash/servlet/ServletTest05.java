@@ -20,9 +20,13 @@ public class ServletTest05 extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		out.print("<html><head><title>test05</title></head>");
+		out.print("<body><ul>");
 		for(int i = 1; i <=9; i++) {
 			out.print("<li>" + number + " X " + i + " = " + (number * i) + "</li>");
 	}
+		out.print("</ul>");
+		out.print("</body></html>");
 
  }
 }
