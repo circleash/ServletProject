@@ -14,17 +14,22 @@ public class ServletEx03 extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		response.setContentType("text/html");
+		response.setContentType("application/json");
 		response.setCharacterEncoding("utf-8");
 		
 		String id = request.getParameter("user_id");
 		String name = request.getParameter("name");
-		Integer age = Integer.parseInt(request.getParameter("age"));
+		int age = Integer.parseInt(request.getParameter("age"));
 
 		PrintWriter out = response.getWriter();
 		
-		out.println("<html><head><title>get 파라미터 확인</title></head>");
-		out.println("<body> <h3> " + id + " : " + name + " : " + age + " </h3></body></html>");
+//		out.println("<html><head><title>get 파라미터 확인</title></head>");
+//		out.println("<body> <h3> " + id + " : " + name + " : " + age + " </h3></body></html>");
+		
+		//JSON 형태 =이거는 파라미터 형태임
+		//?user_id=hagulu&name=김인규&age=25
+		// {"user_id":"hagulu", "name":"김인규", "age":25}
+		out.println("{\"user_id\":\"" + id + "\", \"name\":\"" + name + "\", \"age\":" + age +"}");
 	}
 
 }
