@@ -22,6 +22,11 @@
 	<%
 	List<String> scoreList = Arrays.asList(new String[]{"X", "O", "O", "O", "X", "O", "O", "O", "X", "O"});
 	int count = 0;
+//	for(String check:scoreList) {
+//		if(check.equals("0")) {
+//			count +=10;
+//		}
+//	}
 	for(int i = 0; i < scoreList.size(); i++) {
 		if(scoreList.get(i) == "O") {
 			count = count + 10;			
@@ -31,15 +36,15 @@
 	<strong>채점결과는 : <%=count %>점 입니다.</strong> <br>
 	
 	<%!
-	public static int getSum50() {
+	public int getSum(int number) {
 		int sum = 0;
-		for(int i = 1; i <= 50; i++) {
+		for(int i = 1; i <= number; i++) {
 			sum += i;
 		}
 		return sum;
 	}
 	%>
-	<strong>1에서 50까지의 합은 <%=getSum50() %> 입니다. </strong> <br>
+	<strong>1에서 50까지의 합은 <%=getSum(50) %> 입니다. </strong> <br>
 	
 	<%
 	String birthDay = "20010820"; 
