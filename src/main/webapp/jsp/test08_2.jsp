@@ -16,6 +16,7 @@
 <body>
 	<%
 	int bookID = Integer.parseInt(request.getParameter("id"));
+	
 	List<Map<String, Object>> list = new ArrayList<>();
     Map<String, Object> map = new HashMap<String, Object>() {
         { 

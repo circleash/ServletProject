@@ -54,7 +54,11 @@
 				//리스트에서 맵을 꺼내서 저장.
 				for(Map<String, Object> info : list) {
 					if(searchBar.equals(info.get("menu"))) {
-						if(exception == null || exception.equals("true") && (Double)info.get("point") >= 4) {
+						//if(exception == null || exception.equals("true") && (Double)info.get("point") >= 4) {
+						//출력하지말아야할 것.
+						if(exception != null && (Double)info.get("point") < 4) {
+							continue;
+						}
 			%>
 			<tr>
 				<td><%= info.get("menu")%></td>
@@ -63,7 +67,7 @@
 			</tr>
 			
 			<%
-						}
+						//}
 				}
 			}
 			%>
