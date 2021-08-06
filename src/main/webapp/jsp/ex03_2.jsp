@@ -13,6 +13,7 @@
 		String hobby = request.getParameter("hobby");
 		String animal = request.getParameter("animal");
 		//String food = request.getParameter("food");
+		//여러개 선택이 가능하게 해준다.
 		String[] foodArray = request.getParameterValues("food");
 		String fruit = request.getParameter("fruit");
 		

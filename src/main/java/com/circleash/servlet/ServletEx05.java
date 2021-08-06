@@ -15,9 +15,10 @@ public class ServletEx05 extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		
 		response.setContentType("text/html");
-		response.setCharacterEncoding("utf-8");
+		
 		
 		PrintWriter out = response.getWriter();
 		

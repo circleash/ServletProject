@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.util.*" %>
+<%@ page import="java.util.*" %>
 <%@ page import = "java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Calendar</title>
+<title>Calendar2</title>
 <!-- bootstrap CDN link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -16,27 +16,32 @@
 
 </head>
 <body>
-	<%
-		Calendar today = Calendar.getInstance();
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");
-		
-		today.add(Calendar.DATE, -1);
-			
-	%>
-	<div class="container">
-		<h2>오늘부터 1일</h2>
-	
-		<% 
-			for(int i = 1; i <= 10; i ++) {
-				today.add(Calendar.DATE, 100);
-		%>
-		<h2><%= i*100 %>일: <span class="text-danger"><%=formatter.format(today.getTime()) %></span></h2><br>		
-	<%
-		}
-	%>
-			
-	</div>		
 
+
+	<div class="container">
+	<table class="table">
+		<thead>
+			<tr>			
+				<th>일</th>
+				<th>월</th>
+				<th>화</th>
+				<th>수</th>
+				<th>목</th>
+				<th>금</th>
+				<th>토</th>
+			</tr>
+		</thead>
+		아마도 반복문
+		<tbody>
+			<tr>
+				<th>
+		
+			<tr>
+		</tbody>
+	
+	
+	</table>
+	</div>
 
 
 </body>

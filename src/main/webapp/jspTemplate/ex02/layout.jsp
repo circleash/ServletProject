@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.util.*" %>
-<%@ page import = "java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Calendar</title>
+<title>Insert title here</title>
 <!-- bootstrap CDN link -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -16,28 +14,22 @@
 
 </head>
 <body>
-	<%
-		Calendar today = Calendar.getInstance();
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy년 MM월 dd일");
-		
-		today.add(Calendar.DATE, -1);
-			
-	%>
 	<div class="container">
-		<h2>오늘부터 1일</h2>
+		<jsp:include page="header.jsp" />
+		<jsp:include page="menu.jsp" />
 	
-		<% 
-			for(int i = 1; i <= 10; i ++) {
-				today.add(Calendar.DATE, 100);
-		%>
-		<h2><%= i*100 %>일: <span class="text-danger"><%=formatter.format(today.getTime()) %></span></h2><br>		
-	<%
-		}
-	%>
-			
-	</div>		
-
-
+		<section>
+			<img width="500" alt="강아지" src="https://cdn.pixabay.com/photo/2018/03/31/06/31/dog-3277416_960_720.jpg">
+			<div>
+			예쁜풍경
+			</div>
+		</section>
+		
+		<jsp:include page="footer.jsp" />
+		
+		
+	
+	</div>
 
 </body>
 </html>

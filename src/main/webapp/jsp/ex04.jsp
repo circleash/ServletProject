@@ -30,8 +30,9 @@
 			<th><%=key %></th>
 			<td><%=scoreMap.get(key) %></td>
 		</tr>
+	</table>
 		<% }%>
-		
+	
 
 </body>
 </html>
