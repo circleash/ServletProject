@@ -21,11 +21,11 @@ public class DabaseEx00 extends HttpServlet {
 		response.setContentType("text/html");
 		
 		try {
-			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 			
 			String url = "jdbc:mysql://localhost:3306/circleash";
 			String userId = "root";
-			String password = "!Wjyp3302021";
+			String password = "root";
 			
 			Connection connection = DriverManager.getConnection(url, userId, password);
 			Statement statement = connection.createStatement();

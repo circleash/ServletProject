@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class MysqlService {
+	private static MysqlService mysqlService = null;
 	// url, userId, password
 	
 	private String url;
@@ -20,7 +21,14 @@ public class MysqlService {
 	public MysqlService() {
 			this.url = "jdbc:mysql://localhost:3306/circleash";
 			this.userId = "root";
-			this.password = "!Wjyp3302021";	
+			this.password = "root";	
+	}
+	
+	public static MysqlService getInstance() {
+		if(mysqlService == null) {
+			mysqlService = new MysqlService();
+		}
+		return mysqlService;
 	}
 	
 	//접속 메소드
