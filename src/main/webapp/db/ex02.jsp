@@ -36,6 +36,7 @@
 				<th>생년월일</th>
 				<th>자기소개</th>
 				<th>이메일</th>
+				<th>삭제</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,6 +49,7 @@
 				<td><%=result.getString("yyyymmdd") %></td>
 				<td><%=result.getString("introduce") %></td>
 				<td><%=result.getString("email") %></td>
+				<td><a href="/db/ex02_delete?id=<%=result.getInt("id") %>">삭제</a></td>
 			</tr>
 			
 			<%} %>

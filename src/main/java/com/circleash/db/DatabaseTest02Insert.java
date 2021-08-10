@@ -10,28 +10,29 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.circleash.common.MysqlService;
 
-@WebServlet("/db/ex02_insert")
-public class DatabaseEx02Insert extends HttpServlet {
+@WebServlet("/db/test02_insert")
+public class DatabaseTest02Insert extends HttpServlet {
+	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 			response.setContentType("text/html");
 			
 			PrintWriter out = response.getWriter();
 			
-			//이름, 생년월일, 자기소개, 이메일
 			String name = request.getParameter("name");
-			String birth = request.getParameter("yyyymmdd");
-			String introduce = request.getParameter("introduce");
-			String email = request.getParameter("email");
+			String url = request.getParameter("url");
 			
 			MysqlService mysqlService = MysqlService.getInstance();
 			mysqlService.connect();
 			
-			String insertQuery = "INSERT INTO \r\n" 
-					+ "`new_user` (`name`, `yyyymmdd`, `email`, `introduce`)\r\n"
-					+ "VALUE ('" + name + "', '" + birth + "', '" + email + "', '" + introduce + "'); ";
+			String insertQuery = "INSERT INTO \r\n"
+					+ "`webpage` (`name`, `url`)\r\n"
+					+ "VALUE ('" + name + "', '" + url + "');";
 			int count = mysqlService.update(insertQuery);
 			
-			out.println("입력성공" + count);
+			//out.println("입력성공 " + count);
+			//insert한 이후에 페이지를 넘어가야하기 때문에 여기서 해결해야함.
+			response.sendRedirect("/db/test02.jsp");
 	}
+
 }
